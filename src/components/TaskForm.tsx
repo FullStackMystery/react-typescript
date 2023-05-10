@@ -16,7 +16,7 @@ export default function TaskForm() {
     }
 
     return (
-        <div className='card card-body bg-secondary'>
+        <div className='card card-body bg-secondary' style={{margin:"4px"}}>
             <h3>
                 Add Task
             </h3>

@@ -1,20 +1,20 @@
 import React from 'react'
-import { Task } from '../interfaces/Task'
+import { Task_interface } from '../interfaces/Task'
 
-interface Props {
-    task: Task
+interface interface_Props {
+    property_one_task: Task_interface
 }
 
-export default function TaskCard( {task}: Props) {
+export default function TaskCard( {property_one_task}: interface_Props) {
   return (
-    <div className='card card-body'>
+    <div className='card card-body' style={{margin:"4px", maxWidth:"500px", minWidth:"500px"}}>
         <h2>
-            {task.title}
+            {property_one_task.title}
         </h2>
-        <p>{task.id}</p>
-        <p>{task.title}</p>
-        <p>{task.description}</p>
-        <p>{task.completed}</p>
+        <p>{property_one_task.id}</p>
+        <p>{property_one_task.title}</p>
+        <p>{property_one_task.description}</p>
+        <p>{property_one_task.completed}</p>
         <button className='btn btn-danger'>
             Delete
         </button>
