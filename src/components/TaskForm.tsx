@@ -1,19 +1,46 @@
-import React from 'react'
+import { ChangeEvent, useState } from 'react'
+import { AiOutlinePlus } from 'react-icons/ai'
 
 export default function TaskForm() {
-  return (
-    <div className='card card-body bg-secondary'>
-        <h1>
-            Add Task
-        </h1>
-        <form>
-            <input type="text" placeholder='Write a title' className='form-control mb-3'></input>
-            <textarea name="description" rows={2} placeholder='Write a description' className='form-control mb-3'> </textarea>
-            <button className='btn btn-primary'>
-                Save
-            </button>
-        </form>
 
-    </div>
-  )
+    const [task, setTask] = useState({
+        title: '',
+        description: ''
+    });
+
+    const handleInputChange = ({
+        target: {name, value}
+    }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        console.log(name);
+        console.log(value);
+    }
+
+    return (
+        <div className='card card-body bg-secondary'>
+            <h3>
+                Add Task
+            </h3>
+            <form>
+                <input 
+                    type="text" 
+                    name='title'
+                    placeholder='Write a title' 
+                    className='form-control mb-3'
+                    onChange={handleInputChange}
+                ></input>
+                <textarea 
+                    name="description" 
+                    rows={2} 
+                    placeholder='Write a description' 
+                    className='form-control mb-3'
+                    onChange={handleInputChange}
+                > </textarea>
+                <button className='btn btn-primary'>
+                    <AiOutlinePlus></AiOutlinePlus>
+                    Save
+                </button>
+            </form>
+
+        </div>
+    )
 }
