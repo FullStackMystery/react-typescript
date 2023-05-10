@@ -3,6 +3,7 @@ import './App.css';
 import logo from './logo.svg'
 import { Task } from './interfaces/Task';
 import TaskList from './components/TaskList';
+import TaskForm from './components/TaskForm';
 
 let a: string = '1';
 
@@ -33,7 +34,19 @@ function App({title}: Props) {
       </nav>
 
       <main className='container p-2'>
-        <TaskList tasks={tasks}></TaskList>
+        <div className='row'>
+          <div className='col-md-4'>
+          <div className='row'>
+              <TaskForm></TaskForm>
+            </div>
+          </div>
+
+          <div className='col-md-8'>
+            <div className='row'>
+              <TaskList tasks={tasks}></TaskList>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
